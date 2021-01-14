@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/anmlfarm/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/anmlfarm/static/js/main.80c53d11.chunk.js",
+    "main.js.map": "/anmlfarm/static/js/main.80c53d11.chunk.js.map",
+    "runtime-main.js": "/anmlfarm/static/js/runtime-main.e6765c36.js",
+    "runtime-main.js.map": "/anmlfarm/static/js/runtime-main.e6765c36.js.map",
+    "static/js/2.b92b0411.chunk.js": "/anmlfarm/static/js/2.b92b0411.chunk.js",
+    "static/js/2.b92b0411.chunk.js.map": "/anmlfarm/static/js/2.b92b0411.chunk.js.map",
+    "static/js/3.76228fc2.chunk.js": "/anmlfarm/static/js/3.76228fc2.chunk.js",
+    "static/js/3.76228fc2.chunk.js.map": "/anmlfarm/static/js/3.76228fc2.chunk.js.map",
+    "index.html": "/anmlfarm/index.html",
+    "service-worker.js": "/anmlfarm/service-worker.js",
+    "service-worker.js.map": "/anmlfarm/service-worker.js.map",
+    "static/css/main.8c8b27cf.chunk.css.map": "/anmlfarm/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.b92b0411.chunk.js.LICENSE.txt": "/anmlfarm/static/js/2.b92b0411.chunk.js.LICENSE.txt",
+    "static/media/logo.103b5fa1.svg": "/anmlfarm/static/media/logo.103b5fa1.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e6765c36.js",
+    "static/js/2.b92b0411.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.80c53d11.chunk.js"
+  ]
+}
