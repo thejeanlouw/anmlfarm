@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/anmlfarm/static/css/main.e90463df.chunk.css",
+    "main.css": "/anmlfarm/static/css/main.671c4d53.chunk.css",
     "main.js": "/anmlfarm/static/js/main.c963dcd7.chunk.js",
     "main.js.map": "/anmlfarm/static/js/main.c963dcd7.chunk.js.map",
     "runtime-main.js": "/anmlfarm/static/js/runtime-main.45b8900d.js",
@@ -12,7 +12,7 @@
     "index.html": "/anmlfarm/index.html",
     "service-worker.js": "/anmlfarm/service-worker.js",
     "service-worker.js.map": "/anmlfarm/service-worker.js.map",
-    "static/css/main.e90463df.chunk.css.map": "/anmlfarm/static/css/main.e90463df.chunk.css.map",
+    "static/css/main.671c4d53.chunk.css.map": "/anmlfarm/static/css/main.671c4d53.chunk.css.map",
     "static/js/2.d66139de.chunk.js.LICENSE.txt": "/anmlfarm/static/js/2.d66139de.chunk.js.LICENSE.txt",
     "static/media/entry-page.styles.css": "/anmlfarm/static/media/8609bf40.1e64a95c.jfif",
     "static/media/Subtract.29037d68.png": "/anmlfarm/static/media/Subtract.29037d68.png"
@@ -20,7 +20,7 @@
   "entrypoints": [
     "static/js/runtime-main.45b8900d.js",
     "static/js/2.d66139de.chunk.js",
-    "static/css/main.e90463df.chunk.css",
+    "static/css/main.671c4d53.chunk.css",
     "static/js/main.c963dcd7.chunk.js"
   ]
 }
