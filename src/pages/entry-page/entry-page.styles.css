@@ -2,21 +2,23 @@
     position: fixed; 
     top: 0; 
     left: 0; 
-        
+    
     /* Preserve aspet ratio */
     min-width: 100%;
     min-height: 100%;
 
-    background-image: url('.\\images\\8609bf40.jfif') ; 
+    background-image: url('.\\images\\farm.jfif') ; 
     background-size: cover;
     background-position: center;
+
+    display: flex;
+    flex-direction: column;
 
     justify-content: center;
     align-content: center;
 }
 
-img {
+.entry-page img {
     display: block;
     margin: auto;
-    margin-top: 20%;
 }

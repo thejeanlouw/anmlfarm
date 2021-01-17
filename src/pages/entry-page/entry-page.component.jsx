@@ -13,11 +13,12 @@ class EntryPage extends React.Component {
     render(){
         return(
             <div className='entry-page'>
+                <div className='spacer'></div>
                 <img src={Subtract} onClick={(e)=>console.log('Clicked!')}></img>
+                <div className='spacer'></div>
             </div>
         )
     }
-
 }
 
 export default EntryPage;

@@ -1,0 +1,5 @@
+.foldback-button img{
+    display: flex;
+    height: 5px;
+    justify-content: flex-end;
+}
