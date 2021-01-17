@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/anmlfarm/static/css/main.8076fabb.chunk.css",
-    "main.js": "/anmlfarm/static/js/main.72e2f66e.chunk.js",
-    "main.js.map": "/anmlfarm/static/js/main.72e2f66e.chunk.js.map",
+    "main.css": "/anmlfarm/static/css/main.5296c33a.chunk.css",
+    "main.js": "/anmlfarm/static/js/main.aad93b43.chunk.js",
+    "main.js.map": "/anmlfarm/static/js/main.aad93b43.chunk.js.map",
     "runtime-main.js": "/anmlfarm/static/js/runtime-main.49c8fa44.js",
     "runtime-main.js.map": "/anmlfarm/static/js/runtime-main.49c8fa44.js.map",
     "static/js/2.2f551430.chunk.js": "/anmlfarm/static/js/2.2f551430.chunk.js",
@@ -12,7 +12,7 @@
     "index.html": "/anmlfarm/index.html",
     "service-worker.js": "/anmlfarm/service-worker.js",
     "service-worker.js.map": "/anmlfarm/service-worker.js.map",
-    "static/css/main.8076fabb.chunk.css.map": "/anmlfarm/static/css/main.8076fabb.chunk.css.map",
+    "static/css/main.5296c33a.chunk.css.map": "/anmlfarm/static/css/main.5296c33a.chunk.css.map",
     "static/js/2.2f551430.chunk.js.LICENSE.txt": "/anmlfarm/static/js/2.2f551430.chunk.js.LICENSE.txt",
     "static/media/Subtract.29037d68.png": "/anmlfarm/static/media/Subtract.29037d68.png",
     "static/media/entry-page.styles.css": "/anmlfarm/static/media/farm.1e64a95c.jfif",
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.49c8fa44.js",
     "static/js/2.2f551430.chunk.js",
-    "static/css/main.8076fabb.chunk.css",
-    "static/js/main.72e2f66e.chunk.js"
+    "static/css/main.5296c33a.chunk.css",
+    "static/js/main.aad93b43.chunk.js"
   ]
 }
