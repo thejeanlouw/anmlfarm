@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/anmlfarm/static/css/main.5296c33a.chunk.css",
-    "main.js": "/anmlfarm/static/js/main.aad93b43.chunk.js",
-    "main.js.map": "/anmlfarm/static/js/main.aad93b43.chunk.js.map",
+    "main.js": "/anmlfarm/static/js/main.0ecc1bec.chunk.js",
+    "main.js.map": "/anmlfarm/static/js/main.0ecc1bec.chunk.js.map",
     "runtime-main.js": "/anmlfarm/static/js/runtime-main.49c8fa44.js",
     "runtime-main.js.map": "/anmlfarm/static/js/runtime-main.49c8fa44.js.map",
     "static/js/2.2f551430.chunk.js": "/anmlfarm/static/js/2.2f551430.chunk.js",
@@ -18,12 +18,17 @@
     "static/media/entry-page.styles.css": "/anmlfarm/static/media/farm.1e64a95c.jfif",
     "static/media/simple-info-page.styles.css": "/anmlfarm/static/media/rect.9afc382b.png",
     "static/media/fingerprint.3d50a2af.svg": "/anmlfarm/static/media/fingerprint.3d50a2af.svg",
-    "static/media/left-arrow.b20e13c3.svg": "/anmlfarm/static/media/left-arrow.b20e13c3.svg"
+    "static/media/grow.1e0d1743.svg": "/anmlfarm/static/media/grow.1e0d1743.svg",
+    "static/media/left-arrow.b20e13c3.svg": "/anmlfarm/static/media/left-arrow.b20e13c3.svg",
+    "static/media/observe.756a41b7.svg": "/anmlfarm/static/media/observe.756a41b7.svg",
+    "static/media/react.8ce9433b.svg": "/anmlfarm/static/media/react.8ce9433b.svg",
+    "static/media/simplify.fdd7edb3.svg": "/anmlfarm/static/media/simplify.fdd7edb3.svg",
+    "static/media/thanks.1968d420.svg": "/anmlfarm/static/media/thanks.1968d420.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.49c8fa44.js",
     "static/js/2.2f551430.chunk.js",
     "static/css/main.5296c33a.chunk.css",
-    "static/js/main.aad93b43.chunk.js"
+    "static/js/main.0ecc1bec.chunk.js"
   ]
 }
