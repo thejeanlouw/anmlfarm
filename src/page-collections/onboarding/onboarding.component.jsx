@@ -48,7 +48,7 @@ class Onboarding extends React.Component{
     nextStep = async () =>{
         if(this.state.stepIndex<this.state.content.length-1){
             await this.setState({stepIndex: this.state.stepIndex+1});
-        } else this.props.history.push('/');
+        } else this.props.history.push('/home');
     }
 
     previousStep = () =>{

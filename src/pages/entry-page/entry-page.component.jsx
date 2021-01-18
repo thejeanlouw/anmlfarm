@@ -7,7 +7,28 @@ class EntryPage extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            user: null
+            user: null,
+            hasDoneSignIn: false,
+            hasDoneOnboarding: false,
+            hasDoneProfile: false,
+            hasDoneTerms: false,
+        }
+    }
+
+    handleClick = () =>
+    {
+        if(!this.state.hasDoneSignIn){
+            this.setState({hasDoneSignIn: true});
+            this.props.history.push(`${this.props.match.url}signin`)
+        } else if(!this.state.hasDoneOnboarding){
+            this.setState({hasDoneOnboarding: true});
+            this.props.history.push(`${this.props.match.url}onboarding`)
+        } else if(!this.state.hasDoneProfile){
+            this.setState({hasDoneProfile: true});
+            this.props.history.push(`${this.props.match.url}profile`)
+        } else if(!this.state.hasDoneTerms){
+            this.setState({hasDoneTerms: true});
+            this.props.history.push(`${this.props.match.url}terms`)
         }
     }
 
@@ -15,7 +36,7 @@ class EntryPage extends React.Component {
         return(
             <div className='entry-page'>
                 <div className='spacer'></div>
-                <img src={Subtract} onClick={(e)=>this.props.history.push(`${this.props.match.url}onboarding`)}></img>
+                <img src={Subtract} onClick={this.handleClick} alt='main logo'></img>
                 <div className='spacer'></div>
             </div>
         )
