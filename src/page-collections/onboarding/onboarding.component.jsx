@@ -3,6 +3,12 @@ import SimpleInfoPage from '../../pages/simple-info-page/simple-info-page.compon
 import './onboarding.styles.css'
 import {withRouter} from 'react-router-dom'
 
+import simplify from './images/simplify.svg'
+import observe from './images/observe.svg'
+import react from './images/react.svg'
+import grow from './images/grow.svg'
+import thanks from './images/thanks.svg'
+
 class Onboarding extends React.Component{
 
     constructor(props){
@@ -11,27 +17,27 @@ class Onboarding extends React.Component{
             stepIndex: 0,
             content: [
                 {
-                    image: `${process.env.PUBLIC_URL}/assets/vectors/simplify.svg`,
+                    image: simplify,
                     heading: 'Simplify',
                     body: 'Avoid paper stackpiles and digital logs and ledgers all over the place. Record your activity in the field, in one place, with or without connection!'
                 },
                 {
-                    image: `${process.env.PUBLIC_URL}/assets/vectors/observe.svg`,
+                    image: observe,
                     heading: 'Observe',
                     body: 'See live data of how your farm is performing, as well as predictions on events that might unfold, giving you the power of foresight and knowledge of what to do if and when something happens.'
                 },
                 {
-                    image: `${process.env.PUBLIC_URL}/assets/vectors/react.svg`,
+                    image: react,
                     heading: 'React',
                     body: 'Make decisions, payments, sales and purchases on what your crop or stock needs right now. Never be away from your farm, even when away from your farm'
                 },
                 {
-                    image: `${process.env.PUBLIC_URL}/assets/vectors/grow.svg`,
+                    image: grow,
                     heading: 'Grow',
                     body: 'Join a community of farmers and people just like you, trying to live off of the land and give as they receive. '
                 },
                 {
-                    image: `${process.env.PUBLIC_URL}/assets/vectors/thanks.svg`,
+                    image: thanks,
                     heading: 'Thank You!',
                     body: 'Thank you for downloading ANML Farm! Please note that the site is still under construction. We appreciate your interest, and you can rest assured that we are hard at work fixing all of the remaining issues. If you do spot something we can improve, do let us know! Thanks!'
                 }
@@ -51,26 +57,15 @@ class Onboarding extends React.Component{
         } else this.props.history.goBack();
     }
 
-    currentHeading = () =>{
-        return this.state.content[this.state.stepIndex].heading;
-    }
-
-    currentImage = () =>{
-        return this.state.content[this.state.stepIndex].image;
-    }
-
-    currentBodyText = () =>{
-        return this.state.content[this.state.stepIndex].body;
-    }
 
     render(){
         return(
             <div className='onboarding'>
                 ONBOARDING - {this.state.stepIndex}
                 <SimpleInfoPage
-                    cardBody={this.currentBodyText}
-                    cardHeading={this.currentHeading}
-                    mainImageSource={this.currentImage}
+                    cardBody={this.state.content[this.state.stepIndex].body}
+                    cardHeading={this.state.content[this.state.stepIndex].heading}
+                    mainImageSource={this.state.content[this.state.stepIndex].image}
                     nextClickCallback={this.nextStep}
                     backClickCallback={this.previousStep}
                 />

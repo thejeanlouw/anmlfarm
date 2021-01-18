@@ -13,17 +13,17 @@ const SimpleInfoPage = (
     }) => {
         console.log(backClickCallback);
         console.log(nextClickCallback);
-        console.log(mainImageSource());
-        console.log(cardHeading());
-        console.log(cardBody());
+        console.log(mainImageSource);
+        console.log(cardHeading);
+        console.log(cardBody);
         return (
             <div className='simple-info-page'>
                 
                     <div className='info-card'>
                         <FoldbackButton callback={backClickCallback} />
-                        <img className='main-image' src={mainImageSource()} alt={mainImageSource()}/>
-                        <h1 className='card-heading'>{cardHeading()}</h1>
-                        <p className='card-body'>{cardBody()}</p>
+                        <img className='main-image' src={mainImageSource} alt={mainImageSource}/>
+                        <h1 className='card-heading'>{cardHeading}</h1>
+                        <p className='card-body'>{cardBody}</p>
                         <FingerButton callback={nextClickCallback} />
                     </div>
                 
