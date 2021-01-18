@@ -18,11 +18,7 @@ const SimpleInfoPage = (
         console.log(cardBody());
         return (
             <div className='simple-info-page'>
-                <div className='spacer-horizontal'>
-                    <div className='spacer-vertical' />
-                </div>
-                <div className='main-horizontal'>
-                    <div className='spacer-vertical' />
+                
                     <div className='info-card'>
                         <FoldbackButton callback={backClickCallback} />
                         <img className='main-image' src={mainImageSource()} alt={mainImageSource()}/>
@@ -30,11 +26,7 @@ const SimpleInfoPage = (
                         <p className='card-body'>{cardBody()}</p>
                         <FingerButton callback={nextClickCallback} />
                     </div>
-                    <div className='spacer-vertical' />
-                </div>
-                <div className='spacer-horizontal'>
-                    <div className='spacer-vertical' />
-                </div>
+                
             </div>
 )}
 
