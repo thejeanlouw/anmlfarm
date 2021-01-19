@@ -1,26 +1,29 @@
 {
   "files": {
-    "main.css": "/anmlfarm/static/css/main.9f5e0eee.chunk.css",
-    "main.js": "/anmlfarm/static/js/main.57f2c968.chunk.js",
-    "main.js.map": "/anmlfarm/static/js/main.57f2c968.chunk.js.map",
+    "main.css": "/anmlfarm/static/css/main.b55ade37.chunk.css",
+    "main.js": "/anmlfarm/static/js/main.5532c7d5.chunk.js",
+    "main.js.map": "/anmlfarm/static/js/main.5532c7d5.chunk.js.map",
     "runtime-main.js": "/anmlfarm/static/js/runtime-main.c8127571.js",
     "runtime-main.js.map": "/anmlfarm/static/js/runtime-main.c8127571.js.map",
-    "static/js/2.4e7e2745.chunk.js": "/anmlfarm/static/js/2.4e7e2745.chunk.js",
-    "static/js/2.4e7e2745.chunk.js.map": "/anmlfarm/static/js/2.4e7e2745.chunk.js.map",
+    "static/js/2.d04cbf6c.chunk.js": "/anmlfarm/static/js/2.d04cbf6c.chunk.js",
+    "static/js/2.d04cbf6c.chunk.js.map": "/anmlfarm/static/js/2.d04cbf6c.chunk.js.map",
     "static/js/3.2f7fa84c.chunk.js": "/anmlfarm/static/js/3.2f7fa84c.chunk.js",
     "static/js/3.2f7fa84c.chunk.js.map": "/anmlfarm/static/js/3.2f7fa84c.chunk.js.map",
     "index.html": "/anmlfarm/index.html",
     "service-worker.js": "/anmlfarm/service-worker.js",
     "service-worker.js.map": "/anmlfarm/service-worker.js.map",
-    "static/css/main.9f5e0eee.chunk.css.map": "/anmlfarm/static/css/main.9f5e0eee.chunk.css.map",
-    "static/js/2.4e7e2745.chunk.js.LICENSE.txt": "/anmlfarm/static/js/2.4e7e2745.chunk.js.LICENSE.txt",
+    "static/css/main.b55ade37.chunk.css.map": "/anmlfarm/static/css/main.b55ade37.chunk.css.map",
+    "static/js/2.d04cbf6c.chunk.js.LICENSE.txt": "/anmlfarm/static/js/2.d04cbf6c.chunk.js.LICENSE.txt",
     "static/media/Subtract.29037d68.png": "/anmlfarm/static/media/Subtract.29037d68.png",
+    "static/media/capture.80363b53.png": "/anmlfarm/static/media/capture.80363b53.png",
     "static/media/entry-page.styles.css": "/anmlfarm/static/media/farm.1e64a95c.jfif",
     "static/media/homepage.styles.css": "/anmlfarm/static/media/farm.6bbec7c0.jfif",
     "static/media/simple-info-page.styles.css": "/anmlfarm/static/media/rect.9afc382b.png",
     "static/media/fingerprint.3d50a2af.svg": "/anmlfarm/static/media/fingerprint.3d50a2af.svg",
     "static/media/grow.1e0d1743.svg": "/anmlfarm/static/media/grow.1e0d1743.svg",
+    "static/media/home.4ffec545.png": "/anmlfarm/static/media/home.4ffec545.png",
     "static/media/left-arrow.b20e13c3.svg": "/anmlfarm/static/media/left-arrow.b20e13c3.svg",
+    "static/media/library.ee61f2bd.png": "/anmlfarm/static/media/library.ee61f2bd.png",
     "static/media/observe.756a41b7.svg": "/anmlfarm/static/media/observe.756a41b7.svg",
     "static/media/react.8ce9433b.svg": "/anmlfarm/static/media/react.8ce9433b.svg",
     "static/media/simplify.fdd7edb3.svg": "/anmlfarm/static/media/simplify.fdd7edb3.svg",
@@ -28,8 +31,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.c8127571.js",
-    "static/js/2.4e7e2745.chunk.js",
-    "static/css/main.9f5e0eee.chunk.css",
-    "static/js/main.57f2c968.chunk.js"
+    "static/js/2.d04cbf6c.chunk.js",
+    "static/css/main.b55ade37.chunk.css",
+    "static/js/main.5532c7d5.chunk.js"
   ]
 }
