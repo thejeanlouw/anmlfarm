@@ -61,7 +61,6 @@ class Onboarding extends React.Component{
     render(){
         return(
             <div className='onboarding'>
-                ONBOARDING - {this.state.stepIndex}
                 <SimpleInfoPage
                     cardBody={this.state.content[this.state.stepIndex].body}
                     cardHeading={this.state.content[this.state.stepIndex].heading}

@@ -1,0 +1,13 @@
+.onboarding {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-self: center;
+    justify-self: center;
+
+    min-width: 100%;
+    min-height: 100%;
+}

@@ -2,12 +2,14 @@ import React from 'react';
 import './homepage.styles.css'
 
 import Avatar from '@material-ui/core/Avatar';
-import SwipeUpButton from '../../components/swipe-up-button/swipe-up-button.component';
+import MenuDrawer from '../../components/menu-drawer/menu-drawer.component';
 
 class Homepage extends React.Component{
 
     constructor(props){
         super(props);
+        this.state = {
+        }
     }
 
     render(){
@@ -15,10 +17,12 @@ class Homepage extends React.Component{
         <div className='home-page'>
             <div className='border'>
                 <div className='main-area'>
-                    <Avatar>H</Avatar>
+                    <Avatar style={{
+                        border: '0,0,1px solid black,0'
+                    }}>H</Avatar>
                 </div>
                 <div className='menubar-button'>
-                    <SwipeUpButton />
+                    <MenuDrawer />
                 </div>
             </div>
         </div>
