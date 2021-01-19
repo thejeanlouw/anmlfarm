@@ -9,6 +9,8 @@ function App() {
   return (
     <div className='app'>
     <Switch>
+      <Route path='/signin' component={Onboarding} />
+      <Route path='/library' component={Onboarding} />
       <Route path='/onboarding' component={Onboarding} />
       <Route path='/home' component={Homepage} />
       <Route path='/' component={EntryPage} />

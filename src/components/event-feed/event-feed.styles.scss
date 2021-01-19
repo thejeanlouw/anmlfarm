@@ -1,0 +1,31 @@
+.feed {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+    .profile-pic {
+        display: flex;
+        flex-direction: row;
+
+        justify-content: center;
+
+        width: 100%;
+        border-bottom: 2px solid black;
+
+        .avatar {
+            height: 50px;
+            width: 50px;
+            margin: 10px;
+        }
+    }
+
+    .event-collection{
+        display: flex;
+        flex-flow: row wrap;
+        
+        column-width: 250px;
+        column-gap: 20px;
+        justify-content: space-around;
+    }
+    
+}
