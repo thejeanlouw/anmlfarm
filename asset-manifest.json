@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/anmlfarm/static/css/main.1cc316f1.chunk.css",
-    "main.js": "/anmlfarm/static/js/main.0ab4ad58.chunk.js",
-    "main.js.map": "/anmlfarm/static/js/main.0ab4ad58.chunk.js.map",
-    "runtime-main.js": "/anmlfarm/static/js/runtime-main.a9705096.js",
-    "runtime-main.js.map": "/anmlfarm/static/js/runtime-main.a9705096.js.map",
-    "static/js/2.df8ccf15.chunk.js": "/anmlfarm/static/js/2.df8ccf15.chunk.js",
-    "static/js/2.df8ccf15.chunk.js.map": "/anmlfarm/static/js/2.df8ccf15.chunk.js.map",
-    "static/js/3.98944d9b.chunk.js": "/anmlfarm/static/js/3.98944d9b.chunk.js",
-    "static/js/3.98944d9b.chunk.js.map": "/anmlfarm/static/js/3.98944d9b.chunk.js.map",
+    "main.css": "/anmlfarm/static/css/main.9f5e0eee.chunk.css",
+    "main.js": "/anmlfarm/static/js/main.57f2c968.chunk.js",
+    "main.js.map": "/anmlfarm/static/js/main.57f2c968.chunk.js.map",
+    "runtime-main.js": "/anmlfarm/static/js/runtime-main.c8127571.js",
+    "runtime-main.js.map": "/anmlfarm/static/js/runtime-main.c8127571.js.map",
+    "static/js/2.4e7e2745.chunk.js": "/anmlfarm/static/js/2.4e7e2745.chunk.js",
+    "static/js/2.4e7e2745.chunk.js.map": "/anmlfarm/static/js/2.4e7e2745.chunk.js.map",
+    "static/js/3.2f7fa84c.chunk.js": "/anmlfarm/static/js/3.2f7fa84c.chunk.js",
+    "static/js/3.2f7fa84c.chunk.js.map": "/anmlfarm/static/js/3.2f7fa84c.chunk.js.map",
     "index.html": "/anmlfarm/index.html",
     "service-worker.js": "/anmlfarm/service-worker.js",
     "service-worker.js.map": "/anmlfarm/service-worker.js.map",
-    "static/css/main.1cc316f1.chunk.css.map": "/anmlfarm/static/css/main.1cc316f1.chunk.css.map",
-    "static/js/2.df8ccf15.chunk.js.LICENSE.txt": "/anmlfarm/static/js/2.df8ccf15.chunk.js.LICENSE.txt",
+    "static/css/main.9f5e0eee.chunk.css.map": "/anmlfarm/static/css/main.9f5e0eee.chunk.css.map",
+    "static/js/2.4e7e2745.chunk.js.LICENSE.txt": "/anmlfarm/static/js/2.4e7e2745.chunk.js.LICENSE.txt",
     "static/media/Subtract.29037d68.png": "/anmlfarm/static/media/Subtract.29037d68.png",
     "static/media/entry-page.styles.css": "/anmlfarm/static/media/farm.1e64a95c.jfif",
     "static/media/homepage.styles.css": "/anmlfarm/static/media/farm.6bbec7c0.jfif",
@@ -27,9 +27,9 @@
     "static/media/thanks.1968d420.svg": "/anmlfarm/static/media/thanks.1968d420.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.a9705096.js",
-    "static/js/2.df8ccf15.chunk.js",
-    "static/css/main.1cc316f1.chunk.css",
-    "static/js/main.0ab4ad58.chunk.js"
+    "static/js/runtime-main.c8127571.js",
+    "static/js/2.4e7e2745.chunk.js",
+    "static/css/main.9f5e0eee.chunk.css",
+    "static/js/main.57f2c968.chunk.js"
   ]
 }
