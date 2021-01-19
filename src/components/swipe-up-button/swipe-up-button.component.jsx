@@ -11,6 +11,7 @@ const SwipeUpButton = ({callback}) =>{
     return(
         <div className='swipe-up-button'>
           <img src={buttonGraphic} onClick={callback} />
+          <div className='button-spacer' />
         </div>
     )
 
