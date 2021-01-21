@@ -1,13 +1,19 @@
 .library-menu-bar {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
 
-    justify-content: center;
-
-    width: 100%;
     border-bottom: 2px solid black;
 
     .topic-item {
+
+        display: flex;
+        flex-direction: column;
+        height: 100px;
+    }
+
+    .topic-item img{
         height: 50px;
         width: 50px;
         margin: 10px;

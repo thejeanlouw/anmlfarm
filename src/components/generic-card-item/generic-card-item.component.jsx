@@ -3,7 +3,7 @@ import React from 'react';
 import './generic-card-item.styles.scss'
 
 const GenericCardItem = ({id, title, subtitle, description, imageUrl, date, linkUrl})=>{
-
+    console.log(id, title, subtitle, description, imageUrl, date, linkUrl)
     const openExternal = () =>
     {
         if(linkUrl) {

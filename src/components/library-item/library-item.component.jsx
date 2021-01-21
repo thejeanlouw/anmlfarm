@@ -1,12 +1,12 @@
 import React from 'react';
+import GenericCardItem from '../generic-card-item/generic-card-item.component';
 import './library-item.styles.scss'
 
-const LibraryItem = ({id, title, linkUrl, imageUrl}) => {
+const LibraryItem = ({...info}) => {
+    console.log(info)
     return(
-        <div className='library-item' key={id}>
-            <img src={imageUrl} />
-            <h2>{title}</h2>
-            <button>Read Article</button>
+        <div className='library-item' key={info.id}>
+            <GenericCardItem  {...info} />
         </div>
     )
 }

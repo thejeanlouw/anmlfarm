@@ -10,7 +10,6 @@ import { auth } from './firebase/firebase.utils'
 
 function App() {
   return (
-    <HashRouter basename={process.env.PUBLIC_URL + '/'}>
     <div className='app'>
       <Switch>
         <Route path='/signin' component={Onboarding} />
@@ -20,7 +19,6 @@ function App() {
         <Route path='/' component={EntryPage} />
       </Switch>
     </div>
-    </HashRouter>
   );
 }
 

@@ -4,23 +4,29 @@ import Subtract from './images/Subtract.png'
 import {withRouter} from 'react-router-dom'
 
 
-import {signInWithGoogle} from '../../firebase/firebase.utils'
+import {signInWithGoogle, auth} from '../../firebase/firebase.utils'
 
 class EntryPage extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            user: null,
-            hasDoneSignIn: false,
+            currentUser: null,
             hasDoneOnboarding: false,
             hasDoneProfile: false,
             hasDoneTerms: false,
         }
     }
 
+    componentDidMount(){
+        auth.onAuthStateChanged(user => {
+            this.setState({currentUser: user})
+            console.log(user);
+          });
+    }
+
     handleClick = () =>
     {
-        if(!this.state.hasDoneSignIn){
+        if(!this.state.currentUser){
             const ret = signInWithGoogle();
             console.log(ret);
             alert(ret);

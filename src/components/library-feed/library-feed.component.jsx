@@ -6,12 +6,14 @@ import cow from './images/cow.png'
 import pig from './images/pig.png'
 import sheep from './images/sheep.png'
 
+import LibraryItem from '../library-item/library-item.component';
+
 class LibraryFeed extends React.Component{
 
     constructor(props){
         super(props);
         this.state = {
-            currentTab: 'none',
+            currentTab: 'Sheep',
             libraryData: [
                 {   
                     id: 1,
@@ -20,69 +22,83 @@ class LibraryFeed extends React.Component{
                     items: [
                         {
                             id: 'sh1',
-                            title: 'HOW TO: Handle Your Sheep',
-                            linkUrl: '',
-                            imageUrl: ''
+                            subtitle: 'HOW TO: Handle Your Sheep',
+                            linkUrl: 'https://www.parangelmata.com/post/how-to-handle-your-sheep'
                         },
                         {
                             id: 'sh2',
-                            title: 'HOW TO: Recognise the Signs of Sick Sheep',
-                            linkUrl: '',
-                            imageUrl: ''
+                            subtitle: 'HOW TO: Recognise The Signs Of Sick Sheep',
+                            linkUrl: 'https://www.parangelmata.com/post/how-to-recognise-the-signs-of-sick-sheep'
                         },
                         {
                             id: 'sh3',
-                            title: 'HOW TO: Housing',
-                            linkUrl: '',
-                            imageUrl: ''
+                            subtitle: 'HOW TO: Housing',
+                            linkUrl: 'https://www.parangelmata.com/post/how-to-housing'
+                        },
+                        {
+                            id: 'sh3',
+                            subtitle: 'HOW TO: Transport Your Sheep',
+                            linkUrl: 'https://www.parangelmata.com/post/how-to-transport-your-sheep'
                         }
                     ]
                 },
                 {   
-                    id: 1,
+                    id: 2,
                     topic: 'Pigs',
                     menuImageUrl: pig,
                     items: [
                         {
                             id: 'pi1',
-                            title: 'HOW TO: Handle Your Sheep',
-                            linkUrl: '',
-                            imageUrl: ''
+                            subtitle: 'HOW TO: Select The Right Pig For Breeding',
+                            linkUrl: 'https://www.parangelmata.com/post/how-to-select-the-right-pig-for-breeding',
                         },
                         {
                             id: 'pi2',
-                            title: 'HOW TO: Recognise the Signs of Sick Sheep',
-                            linkUrl: '',
-                            imageUrl: ''
+                            subtitle: 'HOW TO: Housing',
+                            linkUrl: 'https://www.parangelmata.com/post/how-to-housing-1'
                         },
                         {
                             id: 'pi3',
-                            title: 'HOW TO: Housing',
-                            linkUrl: '',
-                            imageUrl: ''
+                            subtitle: 'HOW TO: Transport Your Pigs',
+                            linkUrl: 'https://www.parangelmata.com/post/how-to-transport-your-sheep'
+                        },
+                        {
+                            id: 'pi4',
+                            subtitle: 'TIPS AND TRICKS',
+                            linkUrl: 'https://www.parangelmata.com/post/how-to-transport-your-sheep'
                         }
                     ]
                 },
                 {   
-                    id: 1,
+                    id: 3,
                     topic: 'Cattle',
                     menuImageUrl: cow,
                     items: [
                         {
                             id: 'co1',
-                            title: 'COMING SOON',
-                            linkUrl: '',
-                            imageUrl: ''
+                            subtitle: 'COMING SOON'
                         }
                     ]
                 }]
             }
     }
 
+    onMenuClick = (name) =>
+    {
+        this.setState({currentTab:name});
+    }
+
     render(){
+        const collection = this.state.libraryData.filter(a=>a.topic===this.state.currentTab);
+        const collectionData = collection[0]?.items;
         return(
             <div className='library-feed'>
-                <LibraryMenuBar collection={this.state.libraryData} />
+                <LibraryMenuBar collection={this.state.libraryData} callback={this.onMenuClick}/>
+                <div className='library-collection'>
+                        {collectionData ? collectionData.map(evt=>(
+                            <LibraryItem  info={evt} {...evt}/>
+                        )):null}
+                </div>
             </div>
         )
     }
