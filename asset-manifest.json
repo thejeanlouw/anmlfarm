@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/anmlfarm/static/css/main.21325f30.chunk.css",
-    "main.js": "/anmlfarm/static/js/main.ece76fed.chunk.js",
-    "main.js.map": "/anmlfarm/static/js/main.ece76fed.chunk.js.map",
+    "main.js": "/anmlfarm/static/js/main.296443ff.chunk.js",
+    "main.js.map": "/anmlfarm/static/js/main.296443ff.chunk.js.map",
     "runtime-main.js": "/anmlfarm/static/js/runtime-main.45fa0c80.js",
     "runtime-main.js.map": "/anmlfarm/static/js/runtime-main.45fa0c80.js.map",
     "static/js/2.731193ec.chunk.js": "/anmlfarm/static/js/2.731193ec.chunk.js",
@@ -37,6 +37,6 @@
     "static/js/runtime-main.45fa0c80.js",
     "static/js/2.731193ec.chunk.js",
     "static/css/main.21325f30.chunk.css",
-    "static/js/main.ece76fed.chunk.js"
+    "static/js/main.296443ff.chunk.js"
   ]
 }
