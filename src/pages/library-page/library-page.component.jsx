@@ -1,10 +1,10 @@
 import React from 'react';
-import './homepage.styles.css'
+import './library-page.styles.scss'
 
 import MainPage from '../main-page/main-page.component';
-import EventFeed from '../../components/event-feed/event-feed.component';
+import LibraryFeed from '../../components/library-feed/library-feed.component';
 
-class Homepage extends React.Component{
+class LibraryPage extends React.Component{
 
     constructor(props){
         super(props);
@@ -15,11 +15,11 @@ class Homepage extends React.Component{
     render(){
         return(
             <MainPage>
-                <EventFeed />
+                <LibraryFeed />
             </MainPage>
         )
     }
 
 }
 
-export default Homepage;
+export default LibraryPage;

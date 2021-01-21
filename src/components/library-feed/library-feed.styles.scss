@@ -1,0 +1,16 @@
+.library-feed {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+
+    .library-collection{
+        display: flex;
+        flex-flow: row wrap;
+        
+        column-width: 250px;
+        column-gap: 20px;
+        justify-content: space-around;
+    }
+    
+}

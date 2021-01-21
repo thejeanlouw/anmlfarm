@@ -3,6 +3,9 @@ import './entry-page.styles.css'
 import Subtract from './images/Subtract.png'
 import {withRouter} from 'react-router-dom'
 
+
+import {signInWithGoogle} from '../../firebase/firebase.utils'
+
 class EntryPage extends React.Component {
     constructor(props){
         super(props);
@@ -18,6 +21,9 @@ class EntryPage extends React.Component {
     handleClick = () =>
     {
         if(!this.state.hasDoneSignIn){
+            const ret = signInWithGoogle();
+            console.log(ret);
+            alert(ret);
             this.setState({hasDoneSignIn: true});
             this.props.history.push(`${this.props.match.url}signin`)
         } else if(!this.state.hasDoneOnboarding){

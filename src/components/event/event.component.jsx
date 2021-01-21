@@ -1,5 +1,6 @@
 import { Card } from '@material-ui/core';
 import React from 'react';
+import GenericCardItem from '../generic-card-item/generic-card-item.component';
 import './event.styles.scss'
 
 class Event extends React.Component {
@@ -9,15 +10,11 @@ class Event extends React.Component {
     }
 
     render(){
-        const {title, description, imageUrl, date} = this.props.info;
         return(
             <div className='event'>
-                <Card className='event-card'>
-                    <img src={imageUrl} />
-                    <h1 className='title'>{title.toUpperCase()}</h1>
-                    <span className='description'>{description}</span>
-                    <span className='date'>{date}</span>
-                </Card>
+                <GenericCardItem
+                    {...this.props.info}
+                />
             </div>
         )
     }
