@@ -22,21 +22,23 @@ class MenuDrawer extends React.Component {
         super(props);
         this.state = {
             drawerOpen: false,
-            listItems: [
+            localListItems: [
                 {
                     id: 1,
                     text: 'Home', 
                     imageUrl: '',
-                    linkTo: '/home', 
+                    linkTo: `/home`, 
                     iconImageUrl: home
                 },
                 {
                     id: 2,
                     text: 'Library', 
                     imageUrl: '',
-                    linkTo: '/library', 
+                    linkTo: `/library`, 
                     iconImageUrl: library
-                },
+                }
+            ],
+            externalListItems: [
                 {
                     id: 3,
                     text: 'Community', 
@@ -87,7 +89,19 @@ class MenuDrawer extends React.Component {
                         }}
                     >
                         <List>
-                            {this.state.listItems ? this.state.listItems.map(({id, text, linkTo, iconImageUrl}) => (
+                            {this.state.localListItems ? this.state.localListItems.map(({id, text, linkTo, iconImageUrl}) => (
+                            <Link to={linkTo} className='list-item'>
+                                <ListItem button key={id} >
+                                    <ListItemIcon className='list-item-icon'>
+                                        <img src={iconImageUrl} />
+                                    </ListItemIcon>
+                                    <ListItemText primary={text} className='list-item-text'/>
+                                </ListItem> 
+                            </Link>
+
+                            )): null}
+
+                            {this.state.externalListItems ? this.state.externalListItems.map(({id, text, linkTo, iconImageUrl}) => (
                             <a href={linkTo} target="_blank" className='list-item'>
                                 <ListItem button key={id} >
                                     <ListItemIcon className='list-item-icon'>
@@ -98,6 +112,7 @@ class MenuDrawer extends React.Component {
                             </a>
 
                             )): null}
+
                             
                         </List>
                     </div>
