@@ -4,37 +4,39 @@ import Subtract from './images/Subtract.png'
 import {withRouter} from 'react-router-dom'
 
 
-import {signInWithGoogle} from '../../firebase/firebase.utils'
+import {connect} from 'react-redux'
+import {setCurrentUser} from '../../redux/user/user-actions'
+
 
 class EntryPage extends React.Component {
+
     constructor(props){
         super(props);
-        this.state = {
-            currentUser: null,
-            hasDoneOnboarding: false,
-            hasDoneProfile: false,
-            hasDoneTerms: false,
+    }
+
+    componentDidMount(){
+        if(this.props.currentUser){
+            if(!this.props.hasDoneOnboarding){
+                this.props.history.push(`${this.props.match.url}onboarding`)
+            // } else if(!this.props.currentUser.hasDoneProfile){
+            //     this.props.history.push(`${this.props.match.url}profile`)
+            // } else if(!this.props.currentUser.hasDoneTerms){
+            //     this.props.history.push(`${this.props.match.url}terms`)
+            } else this.props.history.push(`${this.props.match.url}home`)
         }
     }
 
     handleClick = () =>
     {
-        if(!this.state.currentUser){
-            const ret = signInWithGoogle();
-            console.log(ret);
-            alert(ret);
-            this.setState({hasDoneSignIn: true});
+        if(!this.props.currentUser){
             this.props.history.push(`${this.props.match.url}signin`)
-        } else if(!this.state.hasDoneOnboarding){
-            this.setState({hasDoneOnboarding: true});
+        } else if(!this.props.hasDoneOnboarding){
             this.props.history.push(`${this.props.match.url}onboarding`)
-        } else if(!this.state.hasDoneProfile){
-            this.setState({hasDoneProfile: true});
-            this.props.history.push(`${this.props.match.url}profile`)
-        } else if(!this.state.hasDoneTerms){
-            this.setState({hasDoneTerms: true});
-            this.props.history.push(`${this.props.match.url}terms`)
-        }
+        // } else if(!this.props.currentUser.hasDoneProfile){
+        //     this.props.history.push(`${this.props.match.url}profile`)
+        // } else if(!this.props.currentUser.hasDoneTerms){
+        //     this.props.history.push(`${this.props.match.url}terms`)
+        }  else this.props.history.push(`${this.props.match.url}home`)
     }
 
     render(){
@@ -48,4 +50,10 @@ class EntryPage extends React.Component {
     }
 }
 
-export default withRouter(EntryPage);
+
+const mapStateToProps = (state) => ({
+    currentUser: state.user.currentUser,
+    hasDoneOnboarding: state.user.hasDoneOnboarding
+})
+
+export default connect(mapStateToProps)(withRouter(EntryPage));

@@ -1,0 +1,53 @@
+.simple-info-page{
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+
+    background-image: url('.\\images\\farm.jfif') ; 
+    background-size: cover;
+    background-position: center;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+
+    .info-card{
+        height: 500px;
+        width: 300px;
+        position: relative; 
+        top: 0; 
+        left: 0; 
+        background-image: url('.\\images\\rect.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        margin: auto;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: space-around;
+        justify-items: center;
+
+        
+        .card-body {
+            font-size: 12px;
+            width: 200px;
+        }
+
+        .main-image{
+            height: 100px;
+        }
+    }
+}
+
+
+
+

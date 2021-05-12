@@ -1,7 +1,9 @@
 import React from 'react';
 import SimpleInfoPage from '../../pages/simple-info-page/simple-info-page.component';
 import './onboarding.styles.css'
-import {withRouter} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {setOnboardingDone} from '../../redux/user/user-actions'
 
 import simplify from './images/simplify.svg'
 import observe from './images/observe.svg'
@@ -48,7 +50,9 @@ class Onboarding extends React.Component{
     nextStep = async () =>{
         if(this.state.stepIndex<this.state.content.length-1){
             await this.setState({stepIndex: this.state.stepIndex+1});
-        } else this.props.history.push('/home');
+        } else {
+            this.props.setOnboardingDone();
+        }
     }
 
     previousStep = () =>{
@@ -59,19 +63,30 @@ class Onboarding extends React.Component{
 
 
     render(){
+        const {hasDoneOnboarding} = this.props;
         return(
+            
             <div className='onboarding'>
+            {hasDoneOnboarding ? <Redirect to='/' />:
                 <SimpleInfoPage
                     cardBody={this.state.content[this.state.stepIndex].body}
                     cardHeading={this.state.content[this.state.stepIndex].heading}
                     mainImageSource={this.state.content[this.state.stepIndex].image}
                     nextClickCallback={this.nextStep}
-                    backClickCallback={this.previousStep}
                 />
+            }
             </div>
         )
     }
 
 }
 
-export default withRouter(Onboarding);
+const mapDispatchToProps = dispatch => ({
+    setOnboardingDone: () => dispatch(setOnboardingDone())
+})
+
+const mapStateToProps = state => ({
+    hasDoneOnboarding: state.user.hasDoneOnboarding
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Onboarding);

@@ -1,0 +1,26 @@
+.swipe-up-button {
+    background-color: #7FB986;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+    max-height: 25px;
+    text-align: center;
+    text-justify: center;
+    align-content: center;
+    align-items: center;
+    min-width: 100%;
+    
+    border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-bottom-width: 5px;
+
+
+    :hover {
+        background-color: #8FCA97;
+    }
+
+    img {
+        margin: auto;
+        padding: auto;
+        max-height: 25px;
+    }
+}

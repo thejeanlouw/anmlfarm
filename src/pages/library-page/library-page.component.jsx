@@ -2,8 +2,7 @@ import React from 'react';
 import './library-page.styles.scss'
 
 import MainPage from '../main-page/main-page.component';
-import LibraryFeed from '../../components/library-feed/library-feed.component';
-import EventFeed from '../../components/event-feed/event-feed.component';
+import LibraryFeed from '../../components/library/library-feed/library-feed.component';
 
 class LibraryPage extends React.Component{
 
