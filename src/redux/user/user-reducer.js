@@ -2,9 +2,6 @@ import UserActionTypes from './user-action-types'
 
 const INITIAL_STATE = {
     currentUser: null,
-    hasDoneOnboarding: false,
-    hasDoneProfile: false,
-    hasDoneTerms: false
 }
 
 const userReducer = (currentState = INITIAL_STATE, action) =>{
@@ -19,19 +16,26 @@ const userReducer = (currentState = INITIAL_STATE, action) =>{
         case UserActionTypes.SET_PROFILE_COMPLETE:
             return {
                 ...currentState,
-                hasDoneProfile: true
+                currentUser: {
+                    ...currentState.currentUser,
+                    hasDoneProfile: true
+                }
             }
 
         case UserActionTypes.SET_TERMS_ACCEPTED:
             return {
                 ...currentState,
-                hasDoneTerms: true
+                currentUser: {
+                    ...currentState.currentUser,
+                    hasDoneTerms: true}
             }
 
         case UserActionTypes.SET_ONBOARDING_DONE:
             return {
                 ...currentState,
-                hasDoneOnboarding: true
+                currentUser: {
+                    ...currentState.currentUser,
+                    hasDoneOnboarding: true}
             }
 
         default:

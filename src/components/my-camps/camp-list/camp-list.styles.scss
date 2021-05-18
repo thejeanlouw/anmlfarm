@@ -1,0 +1,16 @@
+.camp-list-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    
+
+    .camp-list{
+        display: flex;
+        flex-flow: row wrap;
+        
+        column-width: 250px;
+        column-gap: 20px;
+        justify-content: space-around;
+    }
+    
+}

@@ -4,12 +4,16 @@ import './onboarding.styles.css'
 import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {setOnboardingDone} from '../../redux/user/user-actions'
+import {selectCurrentUserOnboarded} from '../../redux/user/user.selectors'
 
 import simplify from './images/simplify.svg'
 import observe from './images/observe.svg'
 import react from './images/react.svg'
 import grow from './images/grow.svg'
 import thanks from './images/thanks.svg'
+import { updateFirebaseUserField } from '../../firebase/firebase.functions';
+import { auth } from '../../firebase/firebase.utils';
+import { createStructuredSelector } from 'reselect';
 
 class Onboarding extends React.Component{
 
@@ -51,7 +55,9 @@ class Onboarding extends React.Component{
         if(this.state.stepIndex<this.state.content.length-1){
             await this.setState({stepIndex: this.state.stepIndex+1});
         } else {
-            this.props.setOnboardingDone();
+            updateFirebaseUserField(auth.currentUser, 'hasDoneOnboarding', true).then((res)=>{
+                 this.props.setOnboardingDone();
+            })
         }
     }
 
@@ -85,8 +91,8 @@ const mapDispatchToProps = dispatch => ({
     setOnboardingDone: () => dispatch(setOnboardingDone())
 })
 
-const mapStateToProps = state => ({
-    hasDoneOnboarding: state.user.hasDoneOnboarding
+const mapStateToProps = createStructuredSelector({
+    hasDoneOnboarding: selectCurrentUserOnboarded
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Onboarding);

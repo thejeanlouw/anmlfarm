@@ -3,7 +3,6 @@ import GenericCardItem from '../../shared/generic-card-item/generic-card-item.co
 import './library-item.styles.scss'
 
 const LibraryItem = ({...info}) => {
-    console.log(info)
     return(
         <div className='library-item' key={info.id}>
             <GenericCardItem  {...info} />

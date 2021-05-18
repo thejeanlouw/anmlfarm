@@ -10,6 +10,9 @@ import {connect} from 'react-redux';
 import { setCurrentUser } from './redux/user/user-actions';
 import {auth} from './firebase/firebase.utils'
 import {createUserProfileDocument} from './firebase/firebase.functions'
+import AnimalPage from './pages/animal-page/animal-page.component';
+import FarmPage from './pages/farm-page/farm-page.component';
+import CampPage from './pages/camp-page/camp-page.component';
 
 
 class App extends React.Component{
@@ -39,12 +42,21 @@ class App extends React.Component{
     });
   }
 
+  componentWillUnmount(){
+    auth.signOut();
+    this.unsubscribeFromAuth();
+  }
+
   render(){
     return (
       <div className='app'>
         <Switch>
           <Route path='/signin' render={() => (this.props.currentUser == null ? <SignInAndSignUpPage /> : <Redirect to='/' />)} />
+          <Route path='/profile' component={LibraryPage} />
           <Route path='/library' component={LibraryPage} />
+          <Route path='/farms' component={FarmPage}/>
+          <Route path='/camps' component={CampPage}/>
+          <Route path='/animals' component={AnimalPage}/>
           <Route path='/onboarding' component={Onboarding} />
           <Route path='/home' component={Homepage}/>
           <Route path='/' component={EntryPage} />

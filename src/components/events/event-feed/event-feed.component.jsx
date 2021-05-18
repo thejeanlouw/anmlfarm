@@ -1,8 +1,8 @@
-import { Avatar } from '@material-ui/core';
 import React from 'react';
 import Event from '../event-item/event-item.component';
 import './event-feed.styles.scss'
 import {connect} from 'react-redux'
+import ProfileHeader from '../../profile/profile-header/profile-header.component';
 
 class EventFeed extends React.Component{
 
@@ -51,19 +51,11 @@ class EventFeed extends React.Component{
         }
     }
 
+
     render(){
         return(
             <div className='feed'>
-                <div className='header'>
-                    <div className='profile-pic'>
-                        {(this.props.currentUser && this.props.currentUser.photoURL) ? 
-                            <Avatar className='avatar' src={this.props.currentUser?.photoURL} /> : 
-                        <Avatar className='avatar'>{this.props.currentUser?.displayName[0]}</Avatar>}
-                    </div>
-                    <div className='welcome-text'>
-                        Welcome {this.props.currentUser?.displayName}
-                    </div>
-                </div>
+                <ProfileHeader />
                 {this.state.events ? 
                     <div className='event-collection'>
                         {this.state.events.map(evt=>(
@@ -76,8 +68,4 @@ class EventFeed extends React.Component{
     }
 }
 
-const matchStateToProps = ({user}) => ({
-    currentUser : user.currentUser
-})
-
-export default connect(matchStateToProps)(EventFeed);
+export default EventFeed;

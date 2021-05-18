@@ -2,12 +2,10 @@ import { Card } from '@material-ui/core';
 import React from 'react';
 import './generic-card-item.styles.scss'
 
-const GenericCardItem = ({id, title, subtitle, description, imageUrl, date, linkUrl})=>{
-    console.log(id, title, subtitle, description, imageUrl, date, linkUrl)
+const GenericCardItem = ({id, title, subtitle, description, imageUrl, date, linkUrl, children})=>{
     const openExternal = () =>
     {
         if(linkUrl) {
-            console.log(linkUrl);
             window.open(linkUrl);
         }
     }
@@ -20,6 +18,7 @@ const GenericCardItem = ({id, title, subtitle, description, imageUrl, date, link
                 {subtitle ? <h2 className='subtitle'>{subtitle}</h2> :null}
                 {description ? <span className='description'>{description}</span> : null}
                 {date? <span className='date'>{date}</span> : null}
+                {children}
             </Card>
         </div>
     )

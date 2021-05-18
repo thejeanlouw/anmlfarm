@@ -1,8 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './menu-drawer.styles.scss'
-import {toggleDrawerTrue, toggleDrawerFalse} from '../../../redux/controls/page-controls/page-controls-actions'
-
 
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
@@ -18,12 +16,15 @@ import animal from './images/animal.png'
 import community from './images/community.png'
 import SwipeUpButton from '../swipe-up-button/swipe-up-button.component';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { selectCurrentUser } from '../../../redux/user/user.selectors';
 
 class MenuDrawer extends React.Component {
 
     constructor(props){
         super(props);
         this.state = {
+            drawerOpen: false,
             listItems: [
                 {
                     id: 1,
@@ -39,41 +40,20 @@ class MenuDrawer extends React.Component {
                     linkToLocal: `/library`, 
                     iconImageUrl: library
                 },
-                // {
-                //     id: 3,
-                //     text: 'Community', 
-                //     imageUrl: '',
-                //     linkToExternal: 'https://www.parangelmata.com/forum', 
-                //     iconImageUrl: community
-                // },
-                // {
-                //     id: 4,
-                //     text: 'My Farm', 
-                //     imageUrl: '',
-                //     linkToExternal: 'https://www.parangelmata.com/plans-pricing', 
-                //     iconImageUrl: report
-                // },
                 {
                     id: 5,
-                    text: 'My Animals', 
+                    text: 'Animals', 
                     imageUrl: '',
-                    linkToExternal: 'https://www.parangelmata.com/plans-pricing', 
+                    linkToLocal: `/farms/camps`, 
                     iconImageUrl: animal
                 },
                 {
                     id: 6,
                     text: 'My Profile', 
                     imageUrl: '',
-                    linkToExternal: 'https://www.parangelmata.com/plans-pricing', 
+                    linkToExternal: '/profile', 
                     iconImageUrl: profile
-                },
-                // {
-                //     id: 7,
-                //     text: 'Capture', 
-                //     imageUrl: '',
-                //     popupComponent: <ImageCapture />, 
-                //     iconImageUrl: capture
-                // },
+                }
             ]
         }
     }
@@ -84,10 +64,7 @@ class MenuDrawer extends React.Component {
           return;
         }
         if(state){
-            this.props.toggleDrawerTrue();
-        }
-        else if(!this.props.popupOpen) {
-            this.props.toggleDrawerFalse();
+            this.setState({drawerOpen:state})
         }
     };
 
@@ -98,7 +75,7 @@ class MenuDrawer extends React.Component {
                 <div className='drawer-button'>
                     <SwipeUpButton callback={this.toggleDrawer(true)}/>
                 </div>
-                <Drawer anchor='bottom' open={this.props.drawerOpen} onClose={this.toggleDrawer(false)}>
+                <Drawer anchor='bottom' open={this.state.drawerOpen} onClose={this.toggleDrawer(false)}>
                     <div
                         className='drawer-list'
                         role="presentation"
@@ -107,9 +84,9 @@ class MenuDrawer extends React.Component {
                         }}
                     >
                         <List>
-                            {this.state.listItems ? this.state.listItems.map(({id, ...otherInfo}) => (
-                                <DrawerListItem id={id} {...otherInfo} />
-                            )): null}
+                            {this.state.listItems && this.props.user ? this.state.listItems.map(({id, ...otherInfo}) => (
+                                <DrawerListItem key={id} id={id} {...otherInfo} />
+                            )): <DrawerListItem text={'Sign In'} iconImageUrl={profile} linkToLocal={'/signin'}/>}
                         </List>
                     </div>
                 </Drawer>
@@ -118,16 +95,8 @@ class MenuDrawer extends React.Component {
     }
 }
 
-
-const mapDispatchToProps = dispatch => ({
-    toggleDrawerTrue: () => dispatch(toggleDrawerTrue()),
-    toggleDrawerFalse: () => dispatch(toggleDrawerFalse())
+const mapStateToProps = createStructuredSelector({
+    user: selectCurrentUser
 })
 
-const mapStateToProps = state => ({
-    popupOpen: state.controls.popupOpen,
-    drawerOpen: state.controls.drawerOpen,
-})
-
-
-export default connect(mapStateToProps,mapDispatchToProps )(MenuDrawer);
+export default connect(mapStateToProps)(MenuDrawer);

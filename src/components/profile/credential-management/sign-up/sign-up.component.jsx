@@ -14,7 +14,8 @@ export default class Signup extends React.Component {
             displayName: '',
             email: '',
             password: '',
-            confirmPassword: ''
+            confirmPassword: '',
+            error: ''
         }
     }
 
@@ -27,15 +28,18 @@ export default class Signup extends React.Component {
             return;
         }
         try{
-            const {user} = await createUserWithEmailAndPassword(email, password);
+            const createResponse = await createUserWithEmailAndPassword(email, password);
+            const {user} = createResponse;
             await createUserProfileDocument(user, {displayName});
             this.setState({
                 displayName: '',
                 email: '',
                 password: '',
-                confirmPassword: ''
+                confirmPassword: '',
+                error: ''
             })
         } catch (error){
+            this.setState({error: error.message})
             console.error(error);
         }
 
@@ -46,11 +50,12 @@ export default class Signup extends React.Component {
     }
 
     render() {
-        const {displayName, email, password, confirmPassword} = this.state;
+        const {displayName, email, password, confirmPassword, error} = this.state;
         return (
             <div className='sign-up'>
                 <h2>I do not have an account</h2>
                 <span>Sign up with your email and password</span>
+                <span className='error-message'>{error}</span>
                 <form className='sign-up-form' onSubmit={this.handleSubmission}>
                     <FormInput
                         type='text'
@@ -82,7 +87,6 @@ export default class Signup extends React.Component {
                         required/>
                     <CustomButton
                         type='submit'>SIGN UP</CustomButton>
-                        
                 </form>
             </div>
         )

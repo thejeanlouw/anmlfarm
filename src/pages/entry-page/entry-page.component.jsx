@@ -6,6 +6,8 @@ import {withRouter} from 'react-router-dom'
 
 import {connect} from 'react-redux'
 import {setCurrentUser} from '../../redux/user/user-actions'
+import { selectCurrentUser } from '../../redux/user/user.selectors';
+import { createStructuredSelector } from 'reselect';
 
 
 class EntryPage extends React.Component {
@@ -15,8 +17,9 @@ class EntryPage extends React.Component {
     }
 
     componentDidMount(){
-        if(this.props.currentUser){
-            if(!this.props.hasDoneOnboarding){
+        const {currentUser} = this.props;
+        if(currentUser){
+            if(!currentUser.hasDoneOnboarding){
                 this.props.history.push(`${this.props.match.url}onboarding`)
             // } else if(!this.props.currentUser.hasDoneProfile){
             //     this.props.history.push(`${this.props.match.url}profile`)
@@ -28,9 +31,10 @@ class EntryPage extends React.Component {
 
     handleClick = () =>
     {
-        if(!this.props.currentUser){
+        const {currentUser} = this.props;
+        if(!currentUser){
             this.props.history.push(`${this.props.match.url}signin`)
-        } else if(!this.props.hasDoneOnboarding){
+        } else if(!currentUser.hasDoneOnboarding){
             this.props.history.push(`${this.props.match.url}onboarding`)
         // } else if(!this.props.currentUser.hasDoneProfile){
         //     this.props.history.push(`${this.props.match.url}profile`)
@@ -51,9 +55,8 @@ class EntryPage extends React.Component {
 }
 
 
-const mapStateToProps = (state) => ({
-    currentUser: state.user.currentUser,
-    hasDoneOnboarding: state.user.hasDoneOnboarding
+const mapStateToProps = (state) => createStructuredSelector({
+    currentUser: selectCurrentUser
 })
 
 export default connect(mapStateToProps)(withRouter(EntryPage));

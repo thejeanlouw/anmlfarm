@@ -2,30 +2,7 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
-    .header {
-        
-        border-bottom: 2px solid black;
-        text-align: center;
-
-        .profile-pic {
-            display: flex;
-            flex-direction: row;
-
-            justify-content: center;
-
-            width: 100%;
-
-            .avatar {
-                height: 50px;
-                width: 50px;
-                margin: 10px;
-            }
-        }
-
-        .welcome-text {
-            color: gray;
-        }
-    }
+    
 
     .event-collection{
         display: flex;

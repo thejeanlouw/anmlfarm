@@ -19,8 +19,5 @@ const Popup = ({popupOpen, title, children}) => {
   );
 }
 
-const mapStateToProps = state => ({
-    popupOpen: state.controls.popupOpen
-})
 
-export default connect(mapStateToProps)(Popup);
+export default Popup;

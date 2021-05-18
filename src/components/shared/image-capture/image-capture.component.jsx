@@ -3,15 +3,13 @@ import { connect } from 'react-redux'
 import Webcam from 'react-webcam'
 import CustomButton from '../custom-button/custom-button.component'
 import './image-capture.styles.scss'
-import {togglePopupFalse, toggleDrawerFalse} from '../../../redux/controls/page-controls/page-controls-actions'
-
 
 const videoConstraints = {
     width: 800,
     height: 800
 }
 
-const ImageCapture = ({returnImage, togglePopupFalse, toggleDrawerFalse}) => {
+const ImageCapture = ({returnImage, cancelCapture}) => {
 
     const [webcam, setWebcam] = useState(null);
     const [image, setImage] = useState(null);
@@ -30,11 +28,10 @@ const ImageCapture = ({returnImage, togglePopupFalse, toggleDrawerFalse}) => {
 
     const saveCapture = () => {
         if(image){ returnImage(image);}
-        closeAll();
     }
 
     const closeAll = () => {
-        togglePopupFalse();
+        cancelCapture();
     }
     
     return (
@@ -43,8 +40,8 @@ const ImageCapture = ({returnImage, togglePopupFalse, toggleDrawerFalse}) => {
             <img src={image} />:
             <Webcam
                 audio={false}
-                width={window.innerWidth/2}
-                height={window.innerHeight/2}
+                width='50%'
+                height='50%'
                 ref={setRef}
                 screenshotFormat='image/jpeg'
                 videoConstraints={videoConstraints}
@@ -59,9 +56,5 @@ const ImageCapture = ({returnImage, togglePopupFalse, toggleDrawerFalse}) => {
     )
 }
 
-const mapDispatchToProps = dispatch => ({
-    togglePopupFalse: () => dispatch(togglePopupFalse()),
-    toggleDrawerFalse: () => dispatch(toggleDrawerFalse())
-})
 
-export default connect(null, mapDispatchToProps)(ImageCapture)
+export default ImageCapture;
