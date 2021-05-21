@@ -6,11 +6,11 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { connect } from 'react-redux';
 
-const Popup = ({popupOpen, title, children}) => {
+const Popup = ({popupOpen, title, children, cancel}) => {
   return (
     <div>
-      <Dialog open={popupOpen} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">{title}</DialogTitle>
+      <Dialog open={popupOpen} onClose={cancel??undefined} aria-labelledby="form-dialog-title">
+        {title?<DialogTitle id="form-dialog-title">{title}</DialogTitle>:null}
         <DialogContent>
           {children}
         </DialogContent>

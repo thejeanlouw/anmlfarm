@@ -23,6 +23,53 @@ const animalDetailsReducer = (state = ANIMAL_DETAILS_INITIAL_STATE, action) => {
                 animalFilters: mapStringToFilters(action.payload)
             }
 
+        case animalDetailsActionTypes.CREATE_ANIMAL_START:
+            return {
+                ...state,
+                processing: true
+            }
+
+        case animalDetailsActionTypes.CREATE_ANIMAL_FAILURE:
+            return {
+                ...state,
+                error: action.payload,
+                processing: false
+            }
+
+        case animalDetailsActionTypes.FETCH_ANIMAL_START:
+            return {
+                ...state,
+                processing: true
+            }
+
+        case animalDetailsActionTypes.FETCH_ANIMAL_FAILURE:
+            return {
+                ...state,
+                error: action.payload,
+                processing: false
+            }
+
+        case animalDetailsActionTypes.CREATE_ANIMAL_SUCCESS:
+            return {
+                ...state,
+                processing: false,
+                farmAnimals: {
+                    ...state.farmAnimals,
+                    [action.payload.animalId]: action.payload
+                },
+                selectedAnimal: action.payload.animalId
+            }
+
+        case animalDetailsActionTypes.FETCH_ANIMAL_SUCCESS:
+            return {
+                ...state,
+                processing: false,
+                farmAnimals: {
+                    ...state.farmAnimals,
+                    ...action.payload
+                },
+            }
+
         default:
             return state;
     }

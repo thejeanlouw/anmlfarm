@@ -1,23 +1,72 @@
-import campActionTypes from "./camps.action-types";
+import campDetailsActionTypes from "./camps.action-types";
 
 const INITIAL_STATE = {
-    selectedCampId: 'CMP1',
+    error: undefined,
+    processing: false,
+    selectedCamp: '',
     connectedCamps: {
-        CMP1: {
-            id: 'CMP1',
-            farmId: 'FRM1',
-            name: 'Sheep',
-            size: 12
-        }
     }
+    
 }
 
-const campReducer = (state = INITIAL_STATE, action) => {
+const campsReducer = (state = INITIAL_STATE, action) => {
     switch(action.type){
-        case campActionTypes.SELECT_CAMP:
+
+        case campDetailsActionTypes.SELECT_CAMP:
             return {
                 ...state,
-                selectedCampId: action.payload
+                selectedCamp: action.payload
+            }
+
+        case campDetailsActionTypes.CLEAR_CAMPS:
+            return {
+                ...state,
+                selectedCamp: '',
+                connectedCamps: {}
+            }
+
+        case campDetailsActionTypes.CREATE_CAMP_START:
+            return {
+                ...state,
+                processing: true
+            }
+
+        case campDetailsActionTypes.CREATE_CAMP_FAILURE:
+            return {
+                ...state,
+                error: action.payload,
+                processing: false
+            }
+
+        case campDetailsActionTypes.FETCH_CAMP_START:
+            return {
+                ...state,
+                processing: true
+            }
+
+        case campDetailsActionTypes.FETCH_CAMP_FAILURE:
+            return {
+                ...state,
+                error: action.payload,
+                processing: false
+            }
+
+        case campDetailsActionTypes.CREATE_CAMP_SUCCESS:
+            return {
+                ...state,
+                processing: false,
+                connectedCamps: {
+                    ...state.connectedCamps,
+                    [action.payload.campId]: action.payload
+                },
+                selectedCamp: action.payload.campId
+            }
+
+        case campDetailsActionTypes.FETCH_CAMP_SUCCESS:
+            return {
+                ...state,
+                processing: false,
+                connectedCamps: action.payload
             }
 
         default:
@@ -25,4 +74,4 @@ const campReducer = (state = INITIAL_STATE, action) => {
     }
 }
 
-export default campReducer;
+export default campsReducer;

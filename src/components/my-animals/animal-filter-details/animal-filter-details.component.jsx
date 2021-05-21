@@ -3,7 +3,7 @@ import { Component } from 'react'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 import { updateAnimalFilters } from '../../../redux/animal-details/animal-details.actions'
-import { selectFilteredAnimals, selectSelectedCampAnimals } from '../../../redux/animal-details/animal-details.selectors'
+import { selectCurrentCampAnimals } from '../../../redux/animal-details/animal-details.selectors'
 import AnimalListItem from '../animal-list-item/animal-list-item.component'
 
 class AnimalFilterDetails extends Component{
@@ -37,7 +37,7 @@ class AnimalFilterDetails extends Component{
 }
 
 const mapStateToProps = createStructuredSelector({
-    animalFilter: selectSelectedCampAnimals
+    animalFilter: selectCurrentCampAnimals
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -1,38 +1,67 @@
+import farmDetailsActionTypes from "./farm-details.action-types";
+
 const INITIAL_STATE = {
-    selectedFarm: 'FRM1',
+    error: undefined,
+    processing: false,
+    selectedFarm: '',
     connectedFarms: {
-        FRM1: {
-            id: 'FRM1',
-            farmName: 'Stoney Farm',
-            farmCompanyName:'Louw Steenkamp Sole Proprietor',
-            farmCompanyRegistration: 'N\\A',
-            farmPhotoUrl: 'https://static9.depositphotos.com/1086305/1152/i/950/depositphotos_11527878-stock-photo-traditional-vintage-red-farm.jpg',
-            farmGeolocation: '-25.75768355795509, 28.50473620747359',
-            farmOwnerIds: ['1'],
-            farmWorkerIds: ['1','2'],
-            farmManagerIds: ['1','2'],
-            farmPartnerIds: ['1','2'],
-            farmProductSalesRepresentitive: '0',
-            farmVisibility: 'anonymous',
-            farmEquipment: {
-                EQ1: {
-                    id: 'EQ1',
-                    type: 'animal-gps-tracker',
-                    payloadHistory: {
-                        PL1A: {
-                            id: 'PL1A',
-                            timeStamp: 100,
-                            geolocation: '-25.75768355795509, 28.50473620747359'}
-                        }
-                }
-            }
-        }
     }
     
 }
 
 const farmsReducer = (state = INITIAL_STATE, action) => {
     switch(action.type){
+
+        case farmDetailsActionTypes.SELECT_FARM:
+            return {
+                ...state,
+                selectedFarm: action.payload
+            }
+
+        case farmDetailsActionTypes.CREATE_FARM_START:
+            return {
+                ...state,
+                processing: true
+            }
+
+        case farmDetailsActionTypes.CREATE_FARM_FAILURE:
+            return {
+                ...state,
+                error: action.payload,
+                processing: false
+            }
+
+        case farmDetailsActionTypes.FETCH_FARM_START:
+            return {
+                ...state,
+                processing: true
+            }
+
+        case farmDetailsActionTypes.FETCH_FARM_FAILURE:
+            return {
+                ...state,
+                error: action.payload,
+                processing: false
+            }
+
+        case farmDetailsActionTypes.CREATE_FARM_SUCCESS:
+            return {
+                ...state,
+                processing: false,
+                connectedFarms: {
+                    ...state.connectedFarms,
+                    [action.payload.farmId]: action.payload
+                },
+                selectedFarm: action.payload.farmId
+            }
+
+        case farmDetailsActionTypes.FETCH_FARM_SUCCESS:
+            return {
+                ...state,
+                processing: false,
+                connectedFarms: action.payload
+            }
+
         default:
             return state;
     }

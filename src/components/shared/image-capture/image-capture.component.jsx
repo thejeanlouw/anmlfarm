@@ -27,11 +27,11 @@ const ImageCapture = ({returnImage, cancelCapture}) => {
     }
 
     const saveCapture = () => {
-        if(image){ returnImage(image);}
+        if(image && returnImage){ returnImage(image);}
     }
 
     const closeAll = () => {
-        cancelCapture();
+        if(cancelCapture)cancelCapture();
     }
     
     return (
@@ -40,8 +40,8 @@ const ImageCapture = ({returnImage, cancelCapture}) => {
             <img src={image} />:
             <Webcam
                 audio={false}
-                width='50%'
-                height='50%'
+                width='100%'
+                height='100%'
                 ref={setRef}
                 screenshotFormat='image/jpeg'
                 videoConstraints={videoConstraints}

@@ -1,6 +1,12 @@
-const campActionTypes = {
+const campDetailsActionTypes = {
+    CREATE_CAMP_START: 'CREATE_CAMP_START',
+    CREATE_CAMP_SUCCESS: 'CREATE_CAMP_SUCCESS',
+    CREATE_CAMP_FAILURE: 'CREATE_CAMP_FAILURE',
+    FETCH_CAMP_START: 'FETCH_CAMP_START',
+    FETCH_CAMP_SUCCESS: 'FETCH_CAMP_SUCCESS',
+    FETCH_CAMP_FAILURE: 'FETCH_CAMP_FAILURE',
     SELECT_CAMP: 'SELECT_CAMP',
-    CLEAR_CAMP: 'CLEAR_CAMP'
+    CLEAR_CAMPS: 'CLEAR_CAMPS'
 }
 
-export default campActionTypes;
+export default campDetailsActionTypes;

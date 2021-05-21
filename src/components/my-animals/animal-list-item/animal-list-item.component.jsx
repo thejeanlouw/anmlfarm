@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { setSelectedAnimal } from '../../../redux/animal-details/animal-details.actions';
+import CustomButton from '../../shared/custom-button/custom-button.component';
+import GenericCardItem from '../../shared/generic-card-item/generic-card-item.component';
 
 const AnimalListItem = ({setAnimal, animal, history}) => {
     
@@ -10,31 +12,23 @@ const AnimalListItem = ({setAnimal, animal, history}) => {
         history.push('/animals/info')
     }
 
-    const recentlyChecked = () => {
-        const currentDate = new Date();
-        const oldestDate = Date.parse('1 Jan 1970');
-        if(animal.locations && animal.locations[animal.locations.length-1]){
-            oldestDate = Date.parse(animal.locations[animal.locations.length-1].dateTime);
-        };
-        const lastOnlineDiff = Math.abs(currentDate - oldestDate) / 36e5;
-        return (lastOnlineDiff > 24);
-    }
-
+    
     return (
-        <div className="animal-row-details" onClick={animalClick}>
+        <GenericCardItem callback={animalClick} title={animal.tagNumber} imageUrl={animal.animalImages?animal.animalImages[0]:null}>
             <div className="tagNumber">
-                {animal.tagNumber}
+                Name: {animal.displayName}
+            </div>
+            <div className="tagNumber">
+                Tag Number: {animal.tagNumber}
             </div>
             <div className="name">
-                {animal.name}
+                Type: {animal.animalType}
             </div>
-            <div className="lastWeight">
-                {animal.weights[animal.weights.length-1]}
+            <div className="name">
+                Breed: {animal.animalBreed}
             </div>
-            {  recentlyChecked ? <svg width="25" height="25"><circle cx="12.5" cy="12.5" fill="green"></circle></svg>
-                : <svg width="25" height="25"><circle cx="12.5" cy="12.5" fill="red"></circle></svg>
-            }
-        </div>
+            
+        </GenericCardItem>
     )
 }
 

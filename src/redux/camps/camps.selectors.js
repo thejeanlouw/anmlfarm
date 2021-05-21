@@ -3,9 +3,9 @@ import { selectCurrentFarm } from "../farm-details/farm-details.selectors"
 
 export const selectCamps = state => state.camps;
 
-export const selectSelectedCamp = createSelector(
+export const selectCurrentCamp = createSelector(
     [selectCamps],
-    campDetais => campDetais.connectedCamps[campDetais.selectedCampId]
+    campDetais => campDetais.connectedCamps[campDetais.selectedCamp]
 )
 
 export const selectConnectedCamps = createSelector(
@@ -22,7 +22,7 @@ export const selectConnectedCampsArray = createSelector(
 export const selectCurrentFarmCamps = createSelector(
     [selectCurrentFarm, selectConnectedCampsArray],
     (farm, camps) => 
-    camps.filter(c=>c.farmId==farm.id)
+    camps.filter(c=>c.farmId==farm.farmId)
 )
 
 // export const selectCurrentSelectedCamp = createSelector(

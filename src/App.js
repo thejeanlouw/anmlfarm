@@ -38,11 +38,12 @@ class App extends React.Component{
           );
         })
       }
-      this.props.setCurrentUser(userAuth);
+      if(userAuth) this.props.setCurrentUser(userAuth);
     });
   }
 
   componentWillUnmount(){
+    this.props.setCurrentUser(null);
     auth.signOut();
     this.unsubscribeFromAuth();
   }

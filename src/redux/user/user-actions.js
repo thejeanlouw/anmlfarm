@@ -5,6 +5,10 @@ export const setCurrentUser = (user) => ({
     payload: user
 });
 
+export const clearCurrentUser = (user) => ({
+    type: UserActionTypes.CLEAR_CURRENT_USER
+});
+
 export const setProfileComplete = () => ({
     type: UserActionTypes.SET_PROFILE_COMPLETE
 });

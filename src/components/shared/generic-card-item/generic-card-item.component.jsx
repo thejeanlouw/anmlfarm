@@ -2,9 +2,12 @@ import { Card } from '@material-ui/core';
 import React from 'react';
 import './generic-card-item.styles.scss'
 
-const GenericCardItem = ({id, title, subtitle, description, imageUrl, date, linkUrl, children})=>{
+const GenericCardItem = ({id, title, subtitle, description, imageUrl, date, linkUrl, callback, children})=>{
     const openExternal = () =>
     {
+        if(callback){
+            callback();
+        }
         if(linkUrl) {
             window.open(linkUrl);
         }

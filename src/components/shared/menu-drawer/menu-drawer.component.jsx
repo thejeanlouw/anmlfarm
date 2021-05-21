@@ -59,7 +59,6 @@ class MenuDrawer extends React.Component {
     }
 
     toggleDrawer = (state) => (event) => {
-        
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
           return;
         }
@@ -75,7 +74,7 @@ class MenuDrawer extends React.Component {
                 <div className='drawer-button'>
                     <SwipeUpButton callback={this.toggleDrawer(true)}/>
                 </div>
-                <Drawer anchor='bottom' open={this.state.drawerOpen} onClose={this.toggleDrawer(false)}>
+                <Drawer anchor='bottom' open={this.state.drawerOpen} onClose={()=>this.setState({drawerOpen:false})}>
                     <div
                         className='drawer-list'
                         role="presentation"

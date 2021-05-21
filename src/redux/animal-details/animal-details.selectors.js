@@ -1,5 +1,5 @@
 import { createSelector } from "reselect";
-import { selectSelectedCamp } from "../camps/camps.selectors";
+import { selectCurrentCamp } from "../camps/camps.selectors";
 
 export const animalSelector = state => state.animals;
 
@@ -19,20 +19,26 @@ export const selectAllAnimalsAsArray = createSelector(
         .map( key => animals[key])
 )
 
-export const selectSelectedCampAnimals = createSelector(
-    [selectAllAnimalsAsArray, selectSelectedCamp],
-    (animals, camp) => animals.filter(animal => animal.campId == camp?.id)
+export const selectCurrentCampAnimals = createSelector(
+    [selectAllAnimalsAsArray, selectCurrentCamp],
+    (animals, camp) => animals.filter(animal => animal.campId == camp?.campId)
 )
 
-export const selectAnimalFilter = createSelector(
-    [animalSelector],
-    animals => animals.animalFilters
+export const selectCurrentCampAnimalsAsArray = createSelector(
+    [selectCurrentCampAnimals],
+    animals => Object.keys(animals)
+        .map( key => animals[key])
 )
 
-export const selectFilteredAnimals = createSelector(
-    [selectAnimalFilter, selectAllAnimalsAsArray],
-    (animalFilter, animalArray) => {
-        if(animalFilter.campId)
-           return animalArray.filter(animal=>animal.campId == animalFilter.campId)
-    }
-)
+// export const selectAnimalFilter = createSelector(
+//     [animalSelector],
+//     animals => animals.animalFilters
+// )
+
+// export const selectFilteredAnimals = createSelector(
+//     [selectAnimalFilter, selectAllAnimalsAsArray],
+//     (animalFilter, animalArray) => {
+//         if(animalFilter.campId)
+//            return animalArray.filter(animal=>animal.campId == animalFilter.campId)
+//     }
+// )

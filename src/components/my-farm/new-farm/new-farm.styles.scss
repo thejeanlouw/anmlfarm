@@ -1,0 +1,26 @@
+.new-farm{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+
+    .new-farm-form{
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        margin: 10px 20px;
+        width: 40vw;
+    }
+
+    .new-farm-intro {
+        
+        img {
+            width: 200px;
+        }
+    }
+    
+    .error-message {
+        color: red;
+        font-size: smaller;
+    }
+}

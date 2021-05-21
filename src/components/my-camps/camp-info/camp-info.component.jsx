@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect';
-import {setSelectedCamp} from '../../../redux/camps/camps.actions';
-import { selectSelectedCamp } from '../../../redux/camps/camps.selectors';
+import {selectCamp} from '../../../redux/camps/camps.actions';
+import { selectCurrentCamp } from '../../../redux/camps/camps.selectors';
 
 const CampInfo = ({camp, setCamp, campId, match}) => {
     console.log('selectSelectedCamp',camp)
@@ -26,9 +26,9 @@ const CampInfo = ({camp, setCamp, campId, match}) => {
 }
 
 const mapStateToProps = createStructuredSelector({
-    camp: selectSelectedCamp
+    camp: selectCurrentCamp
 })
 const mapDispatchToProps = dispatch => ({
-    setCamp: campId => dispatch(setSelectedCamp(campId))
+    setCamp: campId => dispatch(selectCamp(campId))
 })
 export default connect(mapStateToProps, mapDispatchToProps)(CampInfo);
